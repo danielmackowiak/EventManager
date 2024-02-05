@@ -1,0 +1,15 @@
+﻿@model List<Event>
+
+<h2>Aktualne i przyszłe wydarzenia</h2>
+
+<ul>
+    @foreach (var evt in Model)
+    {
+        <li>
+            <strong>@evt.Title</strong>
+            <p>@evt.Date.ToShortDateString() - @evt.Description</p>
+            <img src="@evt.ImageUrl" alt="Obraz wydarzenia" />
+            <p>Zainteresowani: @string.Join(", ", evt.InterestedUsers.Select(u => u.Name))</p>
+        </li>
+    }
+</ul>

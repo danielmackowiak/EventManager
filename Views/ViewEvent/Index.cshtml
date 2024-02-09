@@ -1,0 +1,26 @@
+﻿@model IEnumerable<EventManager.Models.ViewEvent>
+
+@{
+    ViewData["Title"] = "Polecane Wydarzenia";
+}
+
+<h1>Wydarzenia, które mogą Cię zainteresować</h1>
+<hr />
+
+<form asp-action="Search" method="get">
+    <div>
+        <label for="searchString">Wyszukaj wydarzenie:</label>
+    </div>
+</form>
+
+@if (Model.Any())
+{
+        @foreach (var eventview in Model)
+        {
+
+        }
+}
+else
+{
+    <p>Brak wydarzeń do wyświetlenia.</p>
+}

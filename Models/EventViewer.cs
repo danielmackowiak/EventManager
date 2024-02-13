@@ -1,0 +1,12 @@
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+
+namespace EventManagment.Models
+{
+    public class EventViewer
+    {
+        public Event? Event { get; set; }
+        public IdentityUser? User { get; set; }
+        public byte[]? Image => Event?.Image;
+    }
+}

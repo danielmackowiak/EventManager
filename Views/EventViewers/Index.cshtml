@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EventManagment.Models.EventViewer>
+﻿@model IEnumerable<EventManagment.Models.ViewEvent>
 
 @{
     ViewData["Title"] = "Recommended Events";
@@ -8,7 +8,12 @@
     .event-container {
         display: flex;
         align-items: center;
+        margin-top: 20px;
         margin-bottom: 20px;
+        padding: 2%;
+        -webkit-box-shadow: 0px 0px 4px 1px rgba(36, 127, 155, 1);
+        -moz-box-shadow: 0px 0px 4px 1px rgba(36, 127, 155, 1);
+        box-shadow: 0px 0px 4px 1px rgba(36, 127, 155, 1);
     }
 
     .event-details {
@@ -67,8 +72,6 @@
                 }
             </div>
         </div>
-
-        <hr />
     }
 }
 else

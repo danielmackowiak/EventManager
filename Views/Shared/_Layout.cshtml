@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/EventManagment.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/594040a7dc.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="page-body" sstyle="background-image: url('Image/site-image.jpg');">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
@@ -33,33 +33,23 @@
                                 <a class="nav-link text-light" asp-area="" asp-controller="YourEvents" asp-action="Index">Events You Are Interested In</a>
                             </li>
                         }
-                        else
-                        {                            
-                            <li class="nav-item">
-                                <a class="nav__warning nav-link text-light bg-primary px-3" asp-area="" asp-controller="YourEvents" asp-action="Index">Login to see the events you are interested in</a>
-                            </li>
-
-                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container mt-5">
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="footer text-muted">
-        <div class="container">
-            &copy; 2023 - EventManagment - <a asp-area="" asp-controller="Home" asp-action="Privacy">Greetings</a>
-        </div>
-    </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <div class="page-background"></div>
 </body>
 </html>

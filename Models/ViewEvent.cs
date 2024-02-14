@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EventManagment.Models
 {
-    public class EventViewer
+    public class ViewEvent
     {
         public Event? Event { get; set; }
         public IdentityUser? User { get; set; }

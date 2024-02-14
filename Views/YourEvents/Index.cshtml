@@ -28,7 +28,7 @@
     <tbody>
         @foreach (var yourEvent in Model)
         {
-            <tr>
+            <tr class="event-box">
                 <td>@yourEvent.Event.Title</td>
                 <td>@yourEvent.Event.Description</td>
                 <td>@yourEvent.Event.Start.ToString("yyyy-MM-dd HH:mm")</td>

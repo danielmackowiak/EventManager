@@ -14,8 +14,7 @@ namespace EventManagment.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ApplicationDbContext _context;
 
-        public EventViewersController(ApplicationDbContext context,
-                                       UserManager<IdentityUser> userManager)
+        public EventViewersController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;
@@ -38,7 +37,7 @@ namespace EventManagment.Controllers
                                  .ToListAsync();
 
                 var eventviewer = events
-                                      .Select(e => new EventViewer
+                                      .Select(e => new ViewEvent
                                       {
                                           Event = e,
                                           User = e.User,
@@ -53,7 +52,7 @@ namespace EventManagment.Controllers
             var allEvents = await _context.Event.Include(e => e.User).ToListAsync();
 
             var allEventviewer = allEvents
-                                     .Select(e => new EventViewer
+                                     .Select(e => new ViewEvent
                                      {
                                          Event = e,
                                          User = e.User,
@@ -109,7 +108,7 @@ namespace EventManagment.Controllers
             var searchedEvents = await events.Include(e => e.User).ToListAsync();
 
             var eventViewers
-                = searchedEvents.Select(e => new EventViewer { Event = e }).ToList();
+                = searchedEvents.Select(e => new ViewEvent { Event = e }).ToList();
 
             ViewBag.SearchString = searchString;
 

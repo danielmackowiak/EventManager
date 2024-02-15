@@ -9,12 +9,12 @@ using EventManagment.Models;
 
 namespace EventManagment.Controllers
 {
-    public class EventViewersController : Controller
+    public class ViewEventsController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ApplicationDbContext _context;
 
-        public EventViewersController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
+        public ViewEventsController(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _userManager = userManager;
